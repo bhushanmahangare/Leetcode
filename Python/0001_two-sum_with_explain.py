@@ -38,3 +38,7 @@ class helperFun(object) :
 				return [index, mapping[diff]]
 			else:
 				mapping[val] = index
+
+if __name__ == '__main__':
+    ob = helperFun()
+    ob.twoSum("2,7,11,5",9)          
