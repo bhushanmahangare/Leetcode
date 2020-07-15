@@ -9,5 +9,7 @@ Solving leetcode problems with explanation steps by steps
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Python](Python/0005_longest-palindromic-substring.py) [PHP](/PHP/0005_longest-palindromic-substring.php) [JS](/JS/0005_longest-palindromic-substring.js)   | [Note](000.%20Two%20Sum)|Medium|[Explanation](https://leetcode.com/articles/longest-palindromic-substring/)|
 |6|[ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)| [Python](Python/0006_zigzag-conversion.py) [PHP](/PHP/0006_zigzag-conversion.php) [JS](/JS/0006_zigzag-conversion.js)   | [Note](000.%20Two%20Sum)|Medium|[Explanation](https://leetcode.com/articles/zigzag-conversion/)|
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/)| [Python](Python/0007_reverse-integer.py) [PHP](/PHP/0007_reverse-integer.php) [JS](/JS/0007_reverse-integer.js)   | [Note](000.%20Two%20Sum)|Medium|[Explanation](https://leetcode.com/articles/reverse-integer/)|
+|8|[String To Integer atoi](https://leetcode.com/problems/string-to-integer-atoi/)| [Python](Python/0008_string-to-integer-atoi.py) [PHP](/PHP/0008_string-to-integer-atoi.php) [JS](/JS/0008_string-to-integer-atoi.js)   | [Note](000.%20Two%20Sum)|Medium|[Explanation](https://leetcode.com/articles/string-to-integer-atoi/)|
+
 
 
