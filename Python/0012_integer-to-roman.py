@@ -52,9 +52,14 @@
  * 
  ** =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-='''
 class Solution:
-    def intToRoman(self, num: int) -> str:
-        thousands=["","M","MM","MMM"]
-        hundreds=["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"]
-        tens=["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"]
-        units=["","I","II","III","IV","V","VI","VII","VIII","IX"]
-        return thousands[(num//1000)]+hundreds[(num%1000)//100]+tens[(num%100)//10]+units[num%10]
+    def romanToInt(self, s: str) -> int:
+        dico={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        exept={'IV':4, 'IX': 9, 'XC':90,'XL':40,'CD':400,'CM':900}
+        a=0
+        for i in exept.keys():
+            if i in s:
+                a+=exept[i]
+                s = s.replace(i, '')
+        for r in s:
+            a+=dico[r]
+        return a
