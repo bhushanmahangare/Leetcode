@@ -29,33 +29,35 @@ class Solution {
      * @return ListNode
      */
     function removeNthFromEnd($head, $n) {
+
         $list = [];
         $size = 1;
         $a = $head;
         
-        while($a->next != null){
+        while( $a->next != null ){
             $list[] = $a;
-            $a=$a->next;
+            $a = $a->next;
             $size++;
         }
         $list[] = $a;
         
         $c = null;
         
-        if($size==1){            
+        if( $size == 1 ){            
             return $c;
         }
-        if($size==$n){
-            $head=$head->next;
+
+        if( $size == $n ){
+            $head = $head->next;
             return $head;
         }
         
-        $b=$list[$size-$n-1];
+        $b = $list[$size-$n-1];
         
-        if($b->next->next == null)
-            $b->next=null;
+        if( $b->next->next == null )
+            $b->next = null;
         else
-            $b->next=$b->next->next;
+            $b->next = $b->next->next;
         
         return $head;
     }
