@@ -1,0 +1,60 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * 47. Permutations II
+ * 
+ * Medium
+ * 
+ * Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+ * 
+ * Example:
+ * Input: [1,1,2]
+ * Output:
+ * [
+ *  [1,1,2],
+ *  [1,2,1],
+ *  [2,1,1]
+ * ]
+ ** =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+func permuteUnique(nums []int) [][]int {
+	sort.Ints(nums)
+
+	n := len(nums)
+
+	vector := make([]int, n)
+
+	taken := make([]bool, n)
+
+	var ans [][]int
+
+	makePermutation(0, n, nums, vector, taken, &ans)
+
+	return ans
+}
+
+
+func makePermutation(cur, n int, nums, vector []int, taken []bool, ans *[][]int) {
+	if cur == n {
+		tmp := make([]int, n)
+		copy(tmp, vector)
+		*ans = append(*ans, tmp)
+		return
+	}
+
+	used := make(map[int]bool, n-cur)
+
+	for i := 0; i < n; i++ {
+
+		if !taken[i] && !used[nums[i]] {
+			used[nums[i]] = true
+
+
+			taken[i] = true
+
+			vector[cur] = nums[i]
+
+			makePermutation(cur+1, n, nums, vector, taken, ans)
+
+			taken[i] = false
+		}
+	}
+}
